@@ -1,20 +1,43 @@
-const mongodb = require('mongodb');
-const MongoClient = mongodb.MongoClient;
-const ObjectID = mongodb.ObjectId;
-let database;
+// const mongodb = require('mongodb');
+// const MongoClient = mongodb.MongoClient;
+// const ObjectID = mongodb.ObjectId;
+// let database;
 
-async function getDatabase() {
-    const client = await MongoClient.connect("mongodb://127.0.0.1:27017");
-    database = client.db('library');
+// async function getDatabase() {
+//     const client = await MongoClient.connect("mongodb://127.0.0.1:27017");
+//     database = client.db('library');
 
-    if (!database){
-        console.log('Database not connected!');
-    }
+//     if (!database){
+//         console.log('Database not connected!');
+//     }
 
-    return database;  
+//     return database;  
+// }
+
+// module.exports = {
+//     getDatabase,
+//     ObjectID
+// }
+
+
+
+//-------------------------
+// Mongoose DB Connection
+//-------------------------
+
+const mongoose = require('mongoose');
+
+async function getDatabase(){
+    mongoose.connect('mongodb://127.0.0.1:27017/library')
+    .then(() => {
+        console.log('Dadabase connected :)')
+    }).catch(() => {
+       console.log('Database connection error!')
+    })
 }
 
 module.exports = {
-    getDatabase,
-    ObjectID
+    getDatabase
 }
+
+

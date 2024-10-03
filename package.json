@@ -4,6 +4,7 @@
     "db": "^6.0.3",
     "express": "^4.21.0",
     "express-handlebars": "^8.0.1",
-    "mongo": "^0.1.0"
+    "mongo": "^0.1.0",
+    "mongoose": "^8.7.0"
   }
 }
