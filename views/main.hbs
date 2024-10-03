@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongo DB CRUD</title>
+</head>
+<body>
+    <h1>Mongo DB CRUD Example</h1>
+    {{message}}
+
+     {{#if edit_id}}
+        <h3>Update Book</h3>
+        <form method="post" action="/update_book/{{edit_id}}">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" value="{{edit_book.title}}" required/>
+            
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" value="{{edit_book.author}}" required/>
+            
+            <input type="submit" value="Update Book"/>
+        </form>
+    {{else}}
+        <h3>Create Book</h3>
+        <form method="post" action="/store_book">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" required/>
+            
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" required/>
+            
+            <input type="submit" value="Create Book"/>
+        </form>
+    {{/if}}
+
+    <br><br>
+
+    <!-- List of books -->
+    <ul>
+        {{#each books}}
+        <li>
+            {{this.title}} - {{this.author}} 
+            <a href="/?edit_id={{this._id}}">Edit</a>
+            <a href="/?delete_id={{this._id}}" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+        </li>
+        {{/each}}
+    </ul>
+</body> 
+</html>
