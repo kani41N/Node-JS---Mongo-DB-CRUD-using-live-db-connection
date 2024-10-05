@@ -25,19 +25,19 @@
 // Mongoose DB Connection
 //-------------------------
 
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
-async function getDatabase(){
-    mongoose.connect('mongodb://127.0.0.1:27017/library')
-    .then(() => {
-        console.log('Dadabase connected :)')
-    }).catch(() => {
-       console.log('Database connection error!')
-    })
-}
+// async function getDatabase(){
+//     mongoose.connect('mongodb://127.0.0.1:27017/library')
+//     .then(() => {
+//         console.log('Dadabase connected :)')
+//     }).catch(() => {
+//        console.log('Database connection error!')
+//     })
+// }
 
-module.exports = {
-    getDatabase
-}
+// module.exports = {
+//     getDatabase
+// }
 
 
