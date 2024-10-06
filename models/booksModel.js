@@ -1,10 +1,10 @@
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// const bookSchema = new mongoose.Schema({
-//     title: String,
-//     author: String
-// });
+const bookSchema = new mongoose.Schema({
+    title: String,
+    author: String
+});
 
-// const bookModel = mongoose.model('book', bookSchema);
+const bookModel = mongoose.model('book', bookSchema);
 
-// module.exports = bookModel; 
+module.exports = bookModel; 
